@@ -1,1 +1,201 @@
-/* Add your CSS here */
+/* Set the colors and fonts used across the page. */
+:root {
+	--navy: #092b3a;
+	--ink: #10252c;
+	--mint: #b8e5d0;
+	--orange: #29b7e6;
+	--cream: #f5f1e8;
+	--white: #fffdf8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--cream);
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+header {
+	min-height: 430px;
+	padding: 56px 8vw 48px;
+	color: var(--white);
+	background: var(--navy);
+	background-image: linear-gradient(135deg, #092b3a, #0d4952);
+}
+
+.intel-logo {
+	width: 84px;
+	padding: 8px;
+}
+
+.eyebrow {
+	margin: 58px 0 14px;
+	color: var(--mint);
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+h1 {
+	max-width: 700px;
+	margin: 0;
+	font-size: clamp(48px, 8vw, 100px);
+	font-weight: normal;
+	line-height: .92;
+}
+
+.intro {
+	max-width: 490px;
+	margin: 28px 0 0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.scroll-note {
+	margin: 38px 0 0;
+	color: var(--mint);
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.scroll-note span {
+	display: inline-block;
+	margin-left: 8px;
+	font-size: 20px;
+}
+
+.timeline-wrap {
+	position: relative;
+	overflow: hidden;
+	padding: 90px 0 110px;
+}
+
+.timeline-line {
+	position: absolute;
+	top: 155px;
+	right: 0;
+	left: 0;
+	height: 2px;
+	background: var(--orange);
+}
+
+.timeline {
+	display: flex;
+	position: relative;
+	gap: 28px;
+	overflow-x: auto;
+	padding: 0 8px 35px;
+	scroll-snap-type: x mandatory;
+}
+
+.timeline-card {
+	flex: 0 0 280px;
+	position: relative;
+	scroll-snap-align: start;
+	padding-top: 42px;
+}
+
+h2 {
+	margin: 0 0 8px;
+	color: var(--orange);
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	letter-spacing: 2px;
+}
+
+h3 {
+	min-height: 48px;
+	margin: 0 0 18px;
+	font-size: 25px;
+	font-weight: normal;
+}
+
+.image-wrap {
+	position: relative;
+	overflow: hidden;
+	height: 185px;
+	background: var(--navy);
+	cursor: help;
+}
+
+.image-wrap img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform .4s ease, opacity .4s ease;
+}
+
+.description {
+	display: flex;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	padding: 22px;
+	color: var(--white);
+	background: rgba(9, 43, 58, .94);
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	opacity: 0;
+	transition: opacity .35s ease;
+}
+
+.image-wrap:hover img,
+.image-wrap:focus-within img {
+	transform: scale(1.08);
+	opacity: .35;
+}
+
+.image-wrap:hover .description,
+.image-wrap:focus-within .description {
+	opacity: 1;
+}
+
+@media (max-width: 600px) {
+	header {
+		min-height: 500px;
+		padding: 34px 7vw;
+	}
+
+	.eyebrow {
+		margin-top: 70px;
+	}
+
+	.timeline-wrap {
+		padding-top: 70px;
+	}
+
+	.timeline-line {
+		top: 70px;
+		bottom: 70px;
+		left: 7vw;
+		width: 2px;
+		height: auto;
+	}
+
+	.timeline {
+		flex-direction: column;
+		gap: 55px;
+		overflow-x: visible;
+		padding: 0 8px 35px;
+	}
+
+	.timeline-card {
+		flex-basis: auto;
+		width: 100%;
+		padding-top: 0;
+	}
+}
